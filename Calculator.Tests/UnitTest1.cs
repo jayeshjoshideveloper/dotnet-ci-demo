@@ -1,10 +1,40 @@
-﻿namespace Calculator.Tests;
+﻿using Xunit;
+using CalculatorLibrary = Calculator.Calculator;
 
-public class UnitTest1
+namespace Calculator.Tests;
+
+public class CalculatorTests
 {
-    [Fact]
-    public void Test1()
+    [Theory]
+    [InlineData(2, 3, 5)]
+    [InlineData(10, 20, 30)]
+    [InlineData(-2, 2, 0)]
+    public void Add_ReturnsExpectedResult(int a, int b, int expected)
     {
+        var calculator = new CalculatorLibrary();
 
+        var result = calculator.Add(a, b);
+
+        Assert.Equal(expected, result);
+    }
+
+    [Fact]
+    public void Subtract_ReturnsExpectedResult()
+    {
+        var calculator = new CalculatorLibrary();
+
+        var result = calculator.Subtract(10, 5);
+
+        Assert.Equal(5, result);
+    }
+
+    [Fact]
+    public void Multiply_ReturnsExpectedResult()
+    {
+        var calculator = new CalculatorLibrary();
+
+        var result = calculator.Multiply(4, 5);
+
+        Assert.Equal(20, result);
     }
 }
