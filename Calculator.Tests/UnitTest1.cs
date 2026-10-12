@@ -36,12 +36,5 @@ public class CalculatorTests
         var result = calculator.Multiply(4, 5);
 
         Assert.Equal(20, result);
-    }
-    [Fact]
-public void Add_ShouldFail_WhenExpectedResultIsIncorrect()
-{
-    var calculator = new CalculatorLibrary();
-    var result = calculator.Add(2, 3);
-    Assert.Equal(10, result);
-}
+    }    
 }
